@@ -17,16 +17,22 @@ const comments = [
 
 // Some and Every Checks
 
+// Array.prototype.some() // is at least one person 19?
+//Longest way to do it.
 // const isAdult = people.some(function(person) {
 //   const currentYear = (new Date()).getFullYear();
 //   if(currentYear - person.year >= 19) {
 //     return true;
 //   }
 // });
-
-// Array.prototype.some() // is at least one person 19?
 const isAdult = people.some(
   (person) => new Date().getFullYear() - person.year >= 19
 );
 
 console.log({ isAdult });
+
+// Array.prototype.every() // is everyone 19?
+const allAdults = people.every(
+  (person) => new Date().getFullYear() - person.year >= 19
+);
+console.log({ allAdults });
